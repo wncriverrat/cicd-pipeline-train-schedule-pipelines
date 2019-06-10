@@ -17,9 +17,7 @@ pipeline {
     stage ('Deploy') {
       steps {
         echo 'Doing the deploy'
-        pwd
-        touch foo.txt
-        cp foo.txt /tmp
+        sh 'pwd;touch foo.txt;cp foo.txt /tmp'
       }
     }
   }
