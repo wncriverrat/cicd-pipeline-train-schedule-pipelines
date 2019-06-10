@@ -8,5 +8,19 @@ pipeline {
         archiveArtifacts artifacts: 'dist/trainSchedule.zip'
       }
     }
+    stage ('Test') {
+      steps {
+        echo "Run the automated tests"
+        sh 'ls /tmp'
+      }
+    }
+    stage ('Deploy') {
+      steps {
+        echo 'Doing the deploy'
+        pwd
+        touch foo.txt
+        cp foo.txt /tmp
+      }
+    }
   }
 }
